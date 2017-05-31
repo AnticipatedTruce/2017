@@ -3,16 +3,19 @@
 
 import random
 
-fileName = input("What file do you want to write to?")
-numSpheres = int(input("How many spheres do you want to write to file?"))
+fileName = input("What file do you want to write to? ")
+numSpheres = int(input("How many spheres do you want to write to file? "))
 # Open file
 file = open(fileName,'w')
 # Write the spheres
 for i in range(0,numSpheres) :
     output = 'sphere:'
+    # Set coordinates
     for i in range(3) :
         output += " " + '%.3f'%(random.uniform(-10,10))
-    output += " " + '%.3f'%(random.uniform(1,4))
+    # Set radius
+    output += ' ' + '%.3f'%(random.uniform(.3,1.5))
+    # Set color
     for i in range(3) :
         output += ' ' + '%.3f'%random.random()
     file.write(output + '\n')
